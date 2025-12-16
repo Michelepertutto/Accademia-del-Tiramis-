@@ -39,9 +39,23 @@
     }
   </script>
   <style>
+    html {
+      font-size: 15pt;
+      /* Base size as requested */
+    }
+
     body {
       background-color: #3E2723;
       color: #FFFDF5;
+    }
+
+    #root {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+      /* Visual separation for boxed layout */
+      min-height: 100vh;
     }
 
     /* Custom scrollbar for webkit */
@@ -67,6 +81,20 @@
       @page {
         size: A4 landscape;
         margin: 0;
+      }
+
+      html {
+        font-size: 12pt;
+        /* Adjusted for print scaling */
+      }
+
+      #root {
+        max-width: nonebox;
+        /* Reset for print */
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+        min-height: auto;
       }
 
       body,
