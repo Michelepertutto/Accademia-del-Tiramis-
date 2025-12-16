@@ -1,11 +1,43 @@
-<div align="center">
+# Accademia del Tiramisù - Pitch Deck Digitale
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Proposta strategica interattiva per il restyling e la crescita digitale dell'Accademia del Tiramisù.
 
-  <h1>Built with AI Studio</h2>
+## Credits
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+**Project By:** Michele Caddeo | Marketing & Design
+**Contact:** +39 338 190 3063
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## Tech Stack
 
-</div>
+*   **React** (v18+)
+*   **TypeScript**
+*   **Vite**
+*   **Tailwind CSS** (via CDN per rapid prototyping)
+*   **Lucide React** (Icone)
+
+## Installazione e Avvio
+
+1.  **Clona il repository:**
+    ```bash
+    git clone <tuo-url-repo>
+    cd accademia-tiramisu-pitch
+    ```
+
+2.  **Installa le dipendenze:**
+    ```bash
+    npm install
+    ```
+
+3.  **Avvia il server di sviluppo:**
+    ```bash
+    npm run dev
+    ```
+
+4.  Apri il browser all'indirizzo indicato (solitamente `http://localhost:5173`).
+
+## Struttura
+
+*   `components/slides/`: Contiene tutte le slide divise per sezione.
+*   `components/Controls.tsx`: Navigazione tra le slide.
+*   `App.tsx`: Gestore principale delle slide e della logica di navigazione.
+*   `index.html`: Punto di ingresso con configurazione Tailwind CSS.
