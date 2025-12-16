@@ -80,54 +80,35 @@
     @media print {
       @page {
         size: A4 landscape;
-        margin: 1cm;
-        /* Add physical margin to the page */
+        margin: 0;
       }
 
-      html {
-        font-size: 11pt;
-        /* Slightly smaller to ensure fit */
-      }
-
+      html,
       body {
-        background-color: white !important;
-        color: black !important;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
       }
 
       #root {
-        max-width: nonebox;
-        /* Reset for print */
-        max-width: none !important;
         width: 100% !important;
+        max-width: none !important;
         margin: 0 !important;
         box-shadow: none !important;
-        min-height: auto;
       }
 
-      /* TONER SAVING: Force white backgrounds and dark text */
-      *,
-      *::before,
-      *::after {
-        background-color: white !important;
-        /* Remove all backgrounds */
-        color: black !important;
-        /* Force all text to black */
-        text-shadow: none !important;
-        box-shadow: none !important;
-        border-color: #000 !important;
-        /* Make borders visible and black */
+      /* Simply ensure background colors are printed. 
+         No forceful overrides. Trust the original design. */
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
 
-      /* Exceptions: Images and SVGs */
-      img,
-      svg {
-        background-color: transparent !important;
-        filter: grayscale(100%) !important;
-        /* Optional: print images in bw */
+      /* Hide elements not needed in print */
+      .print\:hidden {
+        display: none !important;
       }
-
-      /* Allow specific print overrides if needed using !important in style attrs, 
-         but generally this blanket rule is best for "toner saving text docs" style */
     }
   </style>
   <script type="importmap">
