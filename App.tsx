@@ -13,6 +13,8 @@ import { Printer } from 'lucide-react';
 // + 13 (OfferIntro) + 14 (OptA) + 15 (OptB-Merged) 
 // + 16 (Email Marketing) + 17 (Comparison) + 18 (Closing)
 // Removed MockupLinksSlide
+import { BackgroundAnimation } from './components/BackgroundAnimation';
+
 const TOTAL_SLIDES = 19;
 
 const App: React.FC = () => {
@@ -55,6 +57,9 @@ const App: React.FC = () => {
 
   return (
     <div className="w-full h-screen relative bg-coffee-900 text-cream-50 overflow-hidden font-sans selection:bg-amber-500 selection:text-white print:h-auto print:overflow-visible">
+
+      {/* Background Falling Icons Animation */}
+      <BackgroundAnimation />
 
       {/* Global Print Button - Only visible on first slide */}
       {currentSlide === 0 && (
