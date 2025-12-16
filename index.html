@@ -50,7 +50,7 @@
     }
 
     #root {
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 0 auto;
       position: relative;
       box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
@@ -80,38 +80,54 @@
     @media print {
       @page {
         size: A4 landscape;
-        margin: 0;
+        margin: 1cm;
+        /* Add physical margin to the page */
       }
 
       html {
-        font-size: 12pt;
-        /* Adjusted for print scaling */
+        font-size: 11pt;
+        /* Slightly smaller to ensure fit */
+      }
+
+      body {
+        background-color: white !important;
+        color: black !important;
       }
 
       #root {
-        max-width: none;
+        max-width: nonebox;
         /* Reset for print */
-        width: 100%;
-        margin: 0;
-        box-shadow: none;
+        max-width: none !important;
+        width: 100% !important;
+        margin: 0 !important;
+        box-shadow: none !important;
         min-height: auto;
       }
 
-      body,
-      html,
-      #root {
-        width: 100%;
-        height: auto !important;
-        overflow: visible !important;
+      /* TONER SAVING: Force white backgrounds and dark text */
+      *,
+      *::before,
+      *::after {
         background-color: white !important;
-        /* Save ink, or keep dark if user prefers "Print as PDF" */
+        /* Remove all backgrounds */
+        color: black !important;
+        /* Force all text to black */
+        text-shadow: none !important;
+        box-shadow: none !important;
+        border-color: #000 !important;
+        /* Make borders visible and black */
       }
 
-      /* Ensure background graphics are printed */
-      * {
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
+      /* Exceptions: Images and SVGs */
+      img,
+      svg {
+        background-color: transparent !important;
+        filter: grayscale(100%) !important;
+        /* Optional: print images in bw */
       }
+
+      /* Allow specific print overrides if needed using !important in style attrs, 
+         but generally this blanket rule is best for "toner saving text docs" style */
     }
   </style>
   <script type="importmap">
